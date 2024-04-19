@@ -3,6 +3,7 @@ import { createMemoryHistory } from "history";
 import { render } from "@testing-library/react";
 import { Router } from "react-router-dom";
 
+// mocking component
 jest.mock("./Home", () => ({ Home: () => <div>Home</div> }));
 
 describe("App", () => {
@@ -16,6 +17,7 @@ describe("App", () => {
     expect(container.innerHTML).toMatch("Goblin Store");
   });
 
+  // testing home component
   it("renders Home component on root route", () => {
     const history = createMemoryHistory();
     history.push("/");

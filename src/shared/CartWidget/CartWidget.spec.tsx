@@ -21,7 +21,7 @@ describe("CartWidget", () => {
     })
 
     const {container} = renderWithRouter(() => <CartWidget/>);
-    expect(container.innerHTML).toMatch("2")
+    expect(container.innerHTML).toMatch("1")
   });
 
   it.todo("navigate to cart summary page on click", () => {

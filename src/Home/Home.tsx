@@ -1,15 +1,15 @@
-import { ProductCard } from "./ProductCard"
-import { useProducts } from "./useProducts"
+import { ProductCard } from "./ProductCard";
+import { useProducts } from "./useProducts";
 
 export const Home = () => {
-  const { categories, isLoading, error } = useProducts()
+  const { categories, isLoading, error } = useProducts();
 
   if (isLoading) {
-    return <>Loading...</>
+    return <>Loading...</>;
   }
 
   if (error) {
-    return <>Error</>
+    return <>Error</>;
   }
 
   return (
@@ -23,17 +23,12 @@ export const Home = () => {
             <h2 className="title">{category.name}</h2>
             <section className="items">
               {category.items.map((item) => {
-                return (
-                  <ProductCard
-                    key={item.name}
-                    datum={item}
-                  />
-                )
+                return <ProductCard key={item.name} data={item} />;
               })}
             </section>
           </section>
-        )
+        );
       })}
     </>
-  )
-}
+  );
+};

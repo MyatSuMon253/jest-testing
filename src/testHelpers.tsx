@@ -20,8 +20,6 @@ declare global {
   }
 }
 
-global.renderWithRouter(() => <div>some component</div>, "route");
-
 global.renderWithRouter = (renderComponent, route) => {
   const history = createMemoryHistory();
   if (route) {

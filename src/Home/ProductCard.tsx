@@ -1,18 +1,14 @@
-import { useCartContext } from "../CartContext"
-import { Product } from "../shared/types"
+import { useCartContext } from "../CartContext";
+import { Product } from "../shared/types";
 
 export interface ProductCardProps {
-  datum: Product
+  data: Product;
 }
 
-export const ProductCard = ({
-  datum,
-}: ProductCardProps) => {
-  const { addToCart, products } = useCartContext()
+export const ProductCard = ({ data: datum }: ProductCardProps) => {
+  const { addToCart, products } = useCartContext();
 
-  const isInCart = !!products?.find(
-    (product) => datum.name === product.name
-  )
+  const isInCart = !!products?.find((product) => datum.name === product.name);
 
   return (
     <div className="nes-container is-rounded item">
@@ -33,12 +29,12 @@ export const ProductCard = ({
         <button
           className="nes-btn is-primary"
           onClick={() => {
-            addToCart(datum)
+            addToCart(datum);
           }}
         >
           Add to cart
         </button>
       )}
     </div>
-  )
-}
+  );
+};
